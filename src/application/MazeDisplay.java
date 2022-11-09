@@ -61,18 +61,7 @@ public class MazeDisplay extends Application {
 	/* 
 	 * Logic of the program
 	 */
-//	// The search algorithms
-//	private Greedy greedy;				
-//	private BFS bfs;
-//	private DFS dfs;
-//	private RandomWalk rand;
-//	private Magic magic;
-//	private String search = "";		// This string tells which algorithm is currently chosen.  Anything other than 
-//	// the implemented search class names will result in no search happening.
-//
-//	// Where to start and stop the search
-//	private Point start;
-//	private Point goal;
+
 
 	// The maze to search
 	//private Maze maze;
