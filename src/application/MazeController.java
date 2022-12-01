@@ -61,13 +61,13 @@ public class MazeController {
 			search = new BFS(maze, start, goal);
 		}
 		else if (searchType.equals("Greedy")) {
-		//	greedy = new Greedy(maze, start, goal);
+			search = new Greedy(maze, start, goal);
 		}
 		else if (searchType.equals("RandomWalk")) {
 			search = new RandomWalk(maze, start, goal);
 		}
 		else if (searchType.equals("Magic")) {
-	//		magic = new Magic(maze, start, goal);
+			search = new Magic(maze, start, goal);
 		}
 
 	}
