@@ -8,6 +8,7 @@ import searches.Greedy;
 import searches.Magic;
 import searches.RandomWalk;
 import searches.SearchAlgorithm;
+import searches.SearchFactory;
 
 public class MazeController {
 	// Where to start and stop the search
@@ -18,14 +19,8 @@ public class MazeController {
 		private MazeDisplay mazeDisplay;
 		private Maze maze;
 	
-	// The search algorithms
-	//private Greedy greedy;				
-	//private BFS bfs;
-	//private DFS dfs;
-	//private RandomWalk rand;
-	//private Magic magic;
-	private SearchAlgorithm search;		// This string tells which algorithm is currently chosen.  Anything other than 
-	// the implemented search class names will result in no search happening.
+	private SearchFactory searchStyle=new SearchFactory();
+	private SearchAlgorithm search;
 	
 	
 	
@@ -54,21 +49,7 @@ public class MazeController {
 		// Restart the search.  Since I don't know 
 		// which one, I'll restart all of them.
 		
-		if(searchType.equals("DFS")) {
-			search = new DFS(maze, start, goal);
-		}
-		else if (searchType.equals("BFS")) {
-			search = new BFS(maze, start, goal);
-		}
-		else if (searchType.equals("Greedy")) {
-			search = new Greedy(maze, start, goal);
-		}
-		else if (searchType.equals("RandomWalk")) {
-			search = new RandomWalk(maze, start, goal);
-		}
-		else if (searchType.equals("Magic")) {
-			search = new Magic(maze, start, goal);
-		}
+		search=searchStyle.makeSearch(searchType, maze, start, goal);
 
 	}
 	
